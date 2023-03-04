@@ -20,15 +20,18 @@ namespace Biblioteca.Models
             using(BibliotecaContext bc = new BibliotecaContext())
             {
                 Usuario usuario = bc.Usuarios.Find(u.Id);
+                usuario.Nome = u.Nome;
                 usuario.Login = u.Login;
                 usuario.Senha = u.Senha;
+                usuario.Email = u.Email;
+               
               
 
                 bc.SaveChanges();
             }
         }
 
-        public ICollection<Usuario> ListarTodos(FiltrosLivros filtro = null)
+        public ICollection<Usuario> ListarTodos(FiltrosUsuarios filtro = null)
         {
             using(BibliotecaContext bc = new BibliotecaContext())
             {

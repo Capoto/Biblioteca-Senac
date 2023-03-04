@@ -12,18 +12,18 @@ namespace Biblioteca.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastro(Livro l)
+        public IActionResult Cadastro(Usuario u)
         {
             
-            LivroService livroService = new LivroService();
+            UsuarioService usuarioService = new UsuarioService();
 
-            if(l.Id == 0)
+            if(u.Id == 0)
             {
-                livroService.Inserir(l);
+                usuarioService.Inserir(u);
             }
             else
             {
-                livroService.Atualizar(l);
+                usuarioService.Atualizar(u);
             }
 
             return RedirectToAction("Listagem");
@@ -32,23 +32,23 @@ namespace Biblioteca.Controllers
         public IActionResult Listagem(string tipoFiltro, string filtro)
         {
             Autenticacao.CheckLogin(this);
-            FiltrosLivros objFiltro = null;
+            FiltrosUsuarios objFiltro = null;
             if(!string.IsNullOrEmpty(filtro))
             {
-                objFiltro = new FiltrosLivros();
+                objFiltro = new FiltrosUsuarios();
                 objFiltro.Filtro = filtro;
                 objFiltro.TipoFiltro = tipoFiltro;
             }
-            LivroService livroService = new LivroService();
-            return View(livroService.ListarTodos(objFiltro));
+            UsuarioService usuarioService = new UsuarioService();
+            return View(usuarioService.ListarTodos(objFiltro));
         }
 
         public IActionResult Edicao(int id)
         {
             Autenticacao.CheckLogin(this);
-            LivroService ls = new LivroService();
-            Livro l = ls.ObterPorId(id);
-            return View(l);
+            UsuarioService ls = new UsuarioService();
+            Usuario u = ls.ObterPorId(id);
+            return View(u);
         }
     }
 }
