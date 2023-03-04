@@ -30,7 +30,7 @@ namespace Biblioteca.Models
             }
         }
 
-        public ICollection<Emprestimo> ListarTodos(FiltrosEmprestimos filtro)
+        public ICollection<Emprestimo> ListarTodos(FiltrosEmprestimos filtro = null)
         {
             using(BibliotecaContext bc = new BibliotecaContext())
             {
@@ -62,7 +62,7 @@ namespace Biblioteca.Models
                 }
 
 
-                return bc.Emprestimos.Include(e => e.Livro).OrderBy(l => l.DataDevolucao ).ToList();
+                return query.Include(e => e.Livro).OrderBy(l => l.DataDevolucao ).ToList();
             }
         }
 
