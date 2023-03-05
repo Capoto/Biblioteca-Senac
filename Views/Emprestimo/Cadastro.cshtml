@@ -2,12 +2,18 @@
 @{
     ViewData["Title"] = "Cadastro de Emprestimos";
 }
+<style>
+.btn-primary{
+    width: 200px;
+}
 
+</style>
 <h1 class="row justify-content-md-center">Cadastro de Empréstimo</h1>
 <div class="row justify-content-md-center">
-    <form asp-action="Cadastro" method="POST" class="col-md-4">
+    <div class="jumbotron col-6">
+    <form asp-action="Cadastro" method="POST">
         <fieldset>
-            <legend>Usuario</legend>
+            <center><h1>Usuario</h1></center>
             <div class="form-group">
                 <label asp-for="Emprestimo.NomeUsuario">Nome</label>
                 <input asp-for="Emprestimo.NomeUsuario" class="form-control" required/>
@@ -18,7 +24,7 @@
             </div>
         </fieldset>
         <fieldset>
-            <legend>Livro</legend>
+            <center><h1>Livro</h1></center>
             <div class="form-group">
                 <label asp-for="Emprestimo.DataEmprestimo">Data de Empréstimo</label>
                 <input type="date" asp-for="Emprestimo.DataEmprestimo" class="form-control" required />
@@ -37,6 +43,8 @@
                 </select>
             </div>
         </fieldset>
-        <input type="submit" value="Salvar" class="btn btn-primary"/>
+        <br>
+        <center><input type="submit" value="Salvar" class="btn btn-primary"/></center>
     </form>
+</div>
 </div>

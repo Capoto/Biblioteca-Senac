@@ -1,10 +1,18 @@
 @{
     ViewData["Title"] = "Login";
 }
+<style>
+.btn-lg{
+    width: 200px;
+}
+
+</style>
+<br><br>
 <!--<div class="container">-->
     <div class="row justify-content-md-center">
         <div class="jumbotron col-6">
-            <h1>Bem vindo ao sistema Biblioteca</h1>
+            <center><h1>Bem vindo ao sistema Biblioteca</h1></center>
+            <br>
             <form asp-action="Login" method="POST">
                 <div class="form-group">
                     <input type="text" placeholder="Login" class="form-control" name="login" />
@@ -12,9 +20,10 @@
                 <div class="form-group">
                     <input type="password" placeholder="Senha" class="form-control" name="senha"/>
                 </div>
-                <input type="submit" class="btn btn-primary btn-lg" value="Entrar" />
+                <br>
+                <center><input type="submit" class="btn btn-primary btn-lg" value="Entrar" /></center>
             </form>
-            <p class="text-danger">@ViewData["Erro"]</p>
+            <center><p class="text-danger">@ViewData["Erro"]</p></center>
         </div>
     </div>
 <!--</div> -->

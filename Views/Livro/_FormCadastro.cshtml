@@ -1,6 +1,17 @@
 @model Livro
+<style>
+.btn-primary{
+    width: 200px;
+}
+
+</style>
+
+<br><br>
 <div class="row justify-content-md-center">
-    <form asp-action="Cadastro" method="POST" class="col-md-4">
+    <div class="jumbotron col-6">
+    <h1 class="row justify-content-md-center">Cadastro de Livro</h1>
+
+    <form asp-action="Cadastro" method="POST">
         <input type="hidden" asp-for="Id" />
         <div class="form-group">
             <label asp-for="Titulo">Titulo</label>
@@ -10,10 +21,12 @@
             <label asp-for="Autor">Autor</label>
             <input asp-for="Autor" class="form-control" required/>
         </div>
-        <div>
+        <div class="form-group">
             <label asp-for="Ano">Ano</label>
-            <input asp-for="Ano" required />
+            <input asp-for="Ano" class="form-control" required />
         </div>
-        <input type="submit" value="Salvar" class="btn btn-primary"/>
+        <br>
+        <center><input type="submit" value="Salvar" class="btn btn-primary"/></center>
     </form>
+</div>
 </div>
