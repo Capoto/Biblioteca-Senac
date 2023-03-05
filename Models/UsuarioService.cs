@@ -31,6 +31,16 @@ namespace Biblioteca.Models
             }
         }
 
+         public void Apagar(int u)
+        {
+            using(BibliotecaContext bc = new BibliotecaContext())
+            {
+                Usuario usuario = bc.Usuarios.Find(u);
+                bc.Usuarios.Remove(usuario);
+                bc.SaveChanges();
+            }
+        }
+
         public ICollection<Usuario> ListarTodos(FiltrosUsuarios filtro = null)
         {
             using(BibliotecaContext bc = new BibliotecaContext())

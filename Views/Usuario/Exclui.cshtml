@@ -1,0 +1,45 @@
+@model Usuario
+  @{
+      ViewData["Title"] = "Cadastro";
+  }
+<style>
+
+.redpill{
+
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 150px;
+    height: 50px;
+}
+
+.bluepill{
+
+    background-color: blue;
+    color: white;
+    border-radius: 50%;
+    width: 150px;
+    height: 50px;
+}
+
+</style>
+<br>
+  <center><h2>Exclusão de registro</h2></center>
+<br>
+  <center><p>Esta ação excluirá o usuário <strong>@Model.Nome</strong> e a operação não poderá ser desfeita</p></center>
+  <center><p>Deseja mesmo excluir?</p></center>
+<br>
+<center>
+  <form asp-action="Exclui" method="POST">
+      <input type="hidden" asp-for="Id" />
+      <button class="redpill" type="submit" name="decisao" value="s">Sim</button>
+      <button class="bluepill" type="submit" name="decisao" value="n">Não</button>
+      
+  </form>
+</center>
+
+<br><br>
+
+<center>
+    <img src="~/red.gif" width="300px" />
+</center>

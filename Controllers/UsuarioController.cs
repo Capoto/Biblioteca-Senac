@@ -50,5 +50,25 @@ namespace Biblioteca.Controllers
             Usuario u = ls.ObterPorId(id);
             return View(u);
         }
-    }
+
+        public IActionResult Exclui(int id)
+        {
+            UsuarioService service = new UsuarioService();
+            Usuario post = service.ObterPorId(id);
+
+            return View(post);
+        }
+
+        [HttpPost]
+        public IActionResult Exclui(int id, string decisao)
+        {
+            if(decisao == "s")
+            {
+            UsuarioService service = new UsuarioService();
+            service.Apagar(id);
+            }
+
+            return RedirectToAction("Listagem");
+        }
+        }
 }
