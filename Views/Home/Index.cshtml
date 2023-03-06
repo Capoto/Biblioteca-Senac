@@ -1,5 +1,10 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Http
+@{
     ViewData["Title"] = "Home Page";
+
+    if(string.Compare(Context.Session.GetString("user"),"admin")==0){
+        Layout = "_AdminLayout";
+    }
 }
 <br><br>
 <div class="text-center">

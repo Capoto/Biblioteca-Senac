@@ -1,7 +1,11 @@
+@using Microsoft.AspNetCore.Http
 @model List<Usuario>
 @{
     ViewData["Title"] = "Listagem de Livros";
-    var numbers = new List<int>();
+      
+    if(string.Compare(Context.Session.GetString("user"),"admin")==0){
+        Layout = "_AdminLayout";
+    }
 }
 <style>
 .pagination {
@@ -30,6 +34,7 @@ ul {
 
 .pagination li:hover:not(.active) {background-color: #ddd;}
 </style>
+
 <div class="container">
 		<center><h2>Escolha o número de linhas</h2></center>
 				<div class="form-group"> 	<!--		Show Numbers Of Rows 		-->

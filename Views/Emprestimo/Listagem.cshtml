@@ -1,6 +1,10 @@
+@using Microsoft.AspNetCore.Http
 @model ICollection<Emprestimo>
 @{
     ViewData["Title"] = "Listagem de Empréstimos";
+    if(string.Compare(Context.Session.GetString("user"),"admin")==0){
+        Layout = "_AdminLayout";
+    }
 }
 <style>
 .pagination {

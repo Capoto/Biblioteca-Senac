@@ -1,7 +1,10 @@
+@using Microsoft.AspNetCore.Http
 @model List<Livro>
 @{
     ViewData["Title"] = "Listagem de Livros";
-    var numbers = new List<int>();
+    if(string.Compare(Context.Session.GetString("user"),"admin")==0){
+        Layout = "_AdminLayout";
+    }
 }
 <style>
 .pagination {

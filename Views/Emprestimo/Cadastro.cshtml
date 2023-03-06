@@ -1,6 +1,10 @@
+@using Microsoft.AspNetCore.Http
 @model CadEmprestimoViewModel
 @{
     ViewData["Title"] = "Cadastro de Emprestimos";
+    if(string.Compare(Context.Session.GetString("user"),"admin")==0){
+        Layout = "_AdminLayout";
+    }
 }
 <style>
 .btn-primary{

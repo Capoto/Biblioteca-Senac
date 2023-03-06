@@ -1,6 +1,10 @@
+@using Microsoft.AspNetCore.Http
 @model CadEmprestimoViewModel
 @{
     ViewData["Title"] = "Edição de Emprestimo";
+    if(string.Compare(Context.Session.GetString("user"),"admin")==0){
+        Layout = "_AdminLayout";
+    }
 }
 
 <h1 class="row justify-content-md-center">Edição de Empréstimo</h1>

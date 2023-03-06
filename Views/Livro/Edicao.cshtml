@@ -1,6 +1,10 @@
+@using Microsoft.AspNetCore.Http
 @model Livro
 @{
     ViewData["Title"] = "Edição de Livros";
+     if(string.Compare(Context.Session.GetString("user"),"admin")==0){
+        Layout = "_AdminLayout";
+    }
 }
 <h1 class="row justify-content-md-center">Edição de Livro</h1>
 <partial name="_FormCadastro" for="@Model" />

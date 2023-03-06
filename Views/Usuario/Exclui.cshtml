@@ -1,6 +1,10 @@
+@using Microsoft.AspNetCore.Http
 @model Usuario
   @{
       ViewData["Title"] = "Cadastro";
+      if(string.Compare(Context.Session.GetString("user"),"admin")==0){
+        Layout = "_AdminLayout";
+    }
   }
 <style>
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewData["Title"] - Biblioteca</title>
-    <link rel="icon" type="image/x-icon" href="~/images.jpg">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="~/images.jpg">
     <link href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.3/datatables.min.css"/>
  
 <script src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.3/datatables.min.js"></script>
@@ -28,12 +28,16 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link text-light dropdown-toggle" data-toggle="dropdown" href="#">Livros</a>
                             <div class="dropdown-menu bg-dark" aria-labelledby="menuLivros">
-                            <a class="dropdown-item bg-dark" href="/Livro/Cadastro" >Livros</a>
-                            <a class="dropdown-item bg-dark" href="/Livro/Listagem">Listagem</a>
+                            <a class="dropdown-item  bg-dark" href="/Livro/Cadastro" >Livros</a>
+                            <a class="dropdown-item  bg-dark" href="/Livro/Listagem">Listagem</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="/Usuario/Cadastro" id="menuLivros">Sign</a>
+                         <li class="nav-item dropdown">
+                            <a class="nav-link text-light dropdown-toggle" data-toggle="dropdown" href="#">Usuário</a>
+                            <div class="dropdown-menu bg-dark" aria-labelledby="menuLivros">
+                                <a class="dropdown-item bg-dark" href="/Usuario/Cadastro" id="menuLivros">Cadastro de Usuário</a>
+                                <a class="dropdown-item bg-dark" href="/Usuario/Listagem">Listagem</a>
+                            </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-light dropdown-toggle" data-toggle="dropdown" href="#">Emprestimo</a>
@@ -47,7 +51,6 @@
             </div>
         </nav>
     </header>
-    
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

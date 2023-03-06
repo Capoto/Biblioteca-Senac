@@ -31,17 +31,36 @@ namespace Biblioteca.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string login, string senha)
+        public IActionResult Login(Usuario u)
         {
-            if(login != "admin" || senha != "123")
+            
+            IQueryable<Usuario> query;
+
+            using(BibliotecaContext bc = new BibliotecaContext())
+            {
+             
+              
+
+            query = bc.Usuarios.Where(p => (p.Login == u.Login) && (p.Senha == Criptografia.GerarMD5(u.Senha)));  
+            string k = u.Senha;
+            List<Usuario> usuario = query.ToList();
+
+            foreach(var t in usuario){
+                    Console.WriteLine(Criptografia.GerarMD5(u.Senha));
+           
+                HttpContext.Session.SetString("user", u.Login);
+                return RedirectToAction("Index");
+            }
+            if(u.Login == "admin" && k == "123")
+            {
+                HttpContext.Session.SetString("user", "admin");
+                return RedirectToAction("Index");
+            }
+            else
             {
                 ViewData["Erro"] = "Senha inválida";
                 return View();
             }
-            else
-            {
-                HttpContext.Session.SetString("user", "admin");
-                return RedirectToAction("Index");
             }
         }
 

@@ -10,6 +10,7 @@ namespace Biblioteca.Models
         {
             using(BibliotecaContext bc = new BibliotecaContext())
             {
+                u.Senha = Criptografia.GerarMD5(u.Senha);
                 bc.Usuarios.Add(u);
                 bc.SaveChanges();
             }

@@ -55,3 +55,4 @@ C:\Users\gomes\Documents\Downloads\Biblioteca - netcore3.1\Biblioteca\obj\Debug\
 C:\Users\gomes\Documents\Downloads\Biblioteca - netcore3.1\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Listagem.cshtml.g.cs
 C:\Users\gomes\Documents\Downloads\Biblioteca - netcore3.1\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Edicao.cshtml.g.cs
 C:\Users\gomes\Documents\Downloads\Biblioteca - netcore3.1\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Exclui.cshtml.g.cs
+C:\Users\gomes\Documents\Downloads\Biblioteca - netcore3.1\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminLayout.cshtml.g.cs

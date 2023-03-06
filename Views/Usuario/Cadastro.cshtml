@@ -1,4 +1,10 @@
+@using Microsoft.AspNetCore.Http
 @model Usuario
+@{
+    if(string.Compare(Context.Session.GetString("user"),"admin")==0){
+        Layout = "_AdminLayout";
+    }
+}
 <style>
 .btn-lg{
     width: 200px;
